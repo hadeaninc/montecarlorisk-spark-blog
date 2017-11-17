@@ -60,15 +60,27 @@ object MonteCarloRisk {
     val seedRdd = sc.parallelize(seeds, parallelism)
 
     // Main computation: run simulations and compute aggregate return for each
+    val start = System.nanoTime();
     val trialsRdd = seedRdd.flatMap(trialValues(_, numTrials / parallelism,
       broadcastInstruments.value, factorMeans, factorCovariances))
 
     // Cache the results so that we don't recompute for both of the summarizations below
     trialsRdd.cache()
 
+    // Print compute time
+    val trialsLength = trialsRdd.count();
+    val doneCompute = System.nanoTime();
+    val computeTime = (doneCompute - start) / 1e9;
+    println("TIMING: n=" + numTrials +", op=compute, duration=" + computeTime);
+
     // Calculate VaR
     val varFivePercent = trialsRdd.takeOrdered(math.max(numTrials / 20, 1)).last
     println("VaR: " + varFivePercent)
+
+    // Print takeOrdered() time
+    val doneVar = System.nanoTime();
+    val varTime = (doneVar - doneCompute) / 1e9;
+    println("TIMING: n=" + numTrials +", op=takeOrdered, duration=" + varTime);
 
     // Kernel density estimation
     /*
