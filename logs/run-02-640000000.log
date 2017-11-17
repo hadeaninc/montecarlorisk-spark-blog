@@ -1,0 +1,354 @@
+Number of trials: 640000000
+Data Size (MB): 4882
+17/11/17 17:31:51 INFO SparkContext: Running Spark version 2.2.0
+17/11/17 17:31:52 INFO SparkContext: Submitted application: Monte Carlo Risk
+17/11/17 17:31:52 INFO SecurityManager: Changing view acls to: hadoop
+17/11/17 17:31:52 INFO SecurityManager: Changing modify acls to: hadoop
+17/11/17 17:31:52 INFO SecurityManager: Changing view acls groups to: 
+17/11/17 17:31:52 INFO SecurityManager: Changing modify acls groups to: 
+17/11/17 17:31:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+17/11/17 17:31:52 INFO Utils: Successfully started service 'sparkDriver' on port 43419.
+17/11/17 17:31:52 INFO SparkEnv: Registering MapOutputTracker
+17/11/17 17:31:52 INFO SparkEnv: Registering BlockManagerMaster
+17/11/17 17:31:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/11/17 17:31:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/11/17 17:31:52 INFO DiskBlockManager: Created local directory at /mnt/tmp/blockmgr-f2e2af91-febf-404f-abf7-dc7bc650870b
+17/11/17 17:31:52 INFO MemoryStore: MemoryStore started with capacity 11.8 GB
+17/11/17 17:31:53 INFO SparkEnv: Registering OutputCommitCoordinator
+17/11/17 17:31:53 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/11/17 17:31:53 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ip-172-31-22-160.us-east-2.compute.internal:4040
+17/11/17 17:31:53 INFO SparkContext: Added JAR file:/home/hadoop/montecarlorisk-spark-blog/target/montecarlo-risk-0.0.1-SNAPSHOT.jar at spark://172.31.22.160:43419/jars/montecarlo-risk-0.0.1-SNAPSHOT.jar with timestamp 1510939913276
+17/11/17 17:31:54 INFO RMProxy: Connecting to ResourceManager at ip-172-31-22-160.us-east-2.compute.internal/172.31.22.160:8032
+17/11/17 17:31:55 INFO Client: Requesting a new application from cluster with 1 NodeManagers
+17/11/17 17:31:55 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (23040 MB per container)
+17/11/17 17:31:55 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+17/11/17 17:31:55 INFO Client: Setting up container launch context for our AM
+17/11/17 17:31:55 INFO Client: Setting up the launch environment for our AM container
+17/11/17 17:31:55 INFO Client: Preparing resources for our AM container
+17/11/17 17:31:56 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+17/11/17 17:31:58 INFO Client: Uploading resource file:/mnt/tmp/spark-f5a93c04-9704-408a-b6d7-cae54fb96d06/__spark_libs__3298213852627648897.zip -> hdfs://ip-172-31-22-160.us-east-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1510931896042_0031/__spark_libs__3298213852627648897.zip
+17/11/17 17:31:59 INFO Client: Uploading resource file:/home/hadoop/montecarlorisk-spark-blog/data/instruments.csv -> hdfs://ip-172-31-22-160.us-east-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1510931896042_0031/instruments.csv
+17/11/17 17:31:59 INFO Client: Uploading resource file:/home/hadoop/montecarlorisk-spark-blog/data/covariances.csv -> hdfs://ip-172-31-22-160.us-east-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1510931896042_0031/covariances.csv
+17/11/17 17:31:59 INFO Client: Uploading resource file:/home/hadoop/montecarlorisk-spark-blog/data/means.csv -> hdfs://ip-172-31-22-160.us-east-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1510931896042_0031/means.csv
+17/11/17 17:31:59 INFO Client: Uploading resource file:/mnt/tmp/spark-f5a93c04-9704-408a-b6d7-cae54fb96d06/__spark_conf__719038399356879908.zip -> hdfs://ip-172-31-22-160.us-east-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1510931896042_0031/__spark_conf__.zip
+17/11/17 17:31:59 INFO SecurityManager: Changing view acls to: hadoop
+17/11/17 17:31:59 INFO SecurityManager: Changing modify acls to: hadoop
+17/11/17 17:31:59 INFO SecurityManager: Changing view acls groups to: 
+17/11/17 17:31:59 INFO SecurityManager: Changing modify acls groups to: 
+17/11/17 17:31:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+17/11/17 17:31:59 INFO Client: Submitting application application_1510931896042_0031 to ResourceManager
+17/11/17 17:31:59 INFO YarnClientImpl: Submitted application application_1510931896042_0031
+17/11/17 17:31:59 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1510931896042_0031 and attemptId None
+17/11/17 17:32:00 INFO Client: Application report for application_1510931896042_0031 (state: ACCEPTED)
+17/11/17 17:32:00 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1510939919527
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-22-160.us-east-2.compute.internal:20888/proxy/application_1510931896042_0031/
+	 user: hadoop
+17/11/17 17:32:01 INFO Client: Application report for application_1510931896042_0031 (state: ACCEPTED)
+17/11/17 17:32:02 INFO Client: Application report for application_1510931896042_0031 (state: ACCEPTED)
+17/11/17 17:32:03 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+17/11/17 17:32:03 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> ip-172-31-22-160.us-east-2.compute.internal, PROXY_URI_BASES -> http://ip-172-31-22-160.us-east-2.compute.internal:20888/proxy/application_1510931896042_0031), /proxy/application_1510931896042_0031
+17/11/17 17:32:03 INFO JettyUtils: Adding filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+17/11/17 17:32:03 INFO Client: Application report for application_1510931896042_0031 (state: RUNNING)
+17/11/17 17:32:03 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 172.31.19.196
+	 ApplicationMaster RPC port: 0
+	 queue: default
+	 start time: 1510939919527
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-22-160.us-east-2.compute.internal:20888/proxy/application_1510931896042_0031/
+	 user: hadoop
+17/11/17 17:32:03 INFO YarnClientSchedulerBackend: Application application_1510931896042_0031 has started running.
+17/11/17 17:32:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40685.
+17/11/17 17:32:03 INFO NettyBlockTransferService: Server created on 172.31.22.160:40685
+17/11/17 17:32:03 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/11/17 17:32:03 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.31.22.160, 40685, None)
+17/11/17 17:32:03 INFO BlockManagerMasterEndpoint: Registering block manager 172.31.22.160:40685 with 11.8 GB RAM, BlockManagerId(driver, 172.31.22.160, 40685, None)
+17/11/17 17:32:03 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.31.22.160, 40685, None)
+17/11/17 17:32:03 INFO BlockManager: external shuffle service port = 7337
+17/11/17 17:32:03 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.31.22.160, 40685, None)
+17/11/17 17:32:03 INFO EventLoggingListener: Logging events to hdfs:///var/log/spark/apps/application_1510931896042_0031
+17/11/17 17:32:06 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.19.196:56932) with ID 1
+17/11/17 17:32:06 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-19-196.us-east-2.compute.internal:33411 with 5.2 GB RAM, BlockManagerId(1, ip-172-31-19-196.us-east-2.compute.internal, 33411, None)
+17/11/17 17:32:08 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.19.196:56940) with ID 2
+17/11/17 17:32:08 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+17/11/17 17:32:08 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-19-196.us-east-2.compute.internal:38207 with 5.2 GB RAM, BlockManagerId(2, ip-172-31-19-196.us-east-2.compute.internal, 38207, None)
+17/11/17 17:32:08 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 344.0 B, free 11.8 GB)
+17/11/17 17:32:08 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 215.0 B, free 11.8 GB)
+17/11/17 17:32:08 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.31.22.160:40685 (size: 215.0 B, free: 11.8 GB)
+17/11/17 17:32:08 INFO SparkContext: Created broadcast 0 from broadcast at MonteCarloRisk.scala:56
+17/11/17 17:32:08 INFO SparkContext: Starting job: count at MonteCarloRisk.scala:71
+17/11/17 17:32:08 INFO DAGScheduler: Got job 0 (count at MonteCarloRisk.scala:71) with 16 output partitions
+17/11/17 17:32:08 INFO DAGScheduler: Final stage: ResultStage 0 (count at MonteCarloRisk.scala:71)
+17/11/17 17:32:08 INFO DAGScheduler: Parents of final stage: List()
+17/11/17 17:32:08 INFO DAGScheduler: Missing parents: List()
+17/11/17 17:32:08 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at flatMap at MonteCarloRisk.scala:64), which has no missing parents
+17/11/17 17:32:08 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 2.9 KB, free 11.8 GB)
+17/11/17 17:32:08 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1803.0 B, free 11.8 GB)
+17/11/17 17:32:08 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.31.22.160:40685 (size: 1803.0 B, free: 11.8 GB)
+17/11/17 17:32:08 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1047
+17/11/17 17:32:08 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at flatMap at MonteCarloRisk.scala:64) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+17/11/17 17:32:08 INFO YarnScheduler: Adding task set 0.0 with 16 tasks
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 0, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 1, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 2, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 3, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 4, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 5, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 6, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:08 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 7, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:09 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 1803.0 B, free: 5.2 GB)
+17/11/17 17:32:09 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 1803.0 B, free: 5.2 GB)
+17/11/17 17:32:09 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 215.0 B, free: 5.2 GB)
+17/11/17 17:32:09 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 215.0 B, free: 5.2 GB)
+17/11/17 17:32:24 INFO BlockManagerInfo: Added rdd_1_1 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 4.9 GB)
+17/11/17 17:32:24 INFO BlockManagerInfo: Added rdd_1_3 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 4.6 GB)
+17/11/17 17:32:25 INFO BlockManagerInfo: Added rdd_1_6 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 4.9 GB)
+17/11/17 17:32:25 INFO BlockManagerInfo: Added rdd_1_0 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 4.6 GB)
+17/11/17 17:32:25 INFO BlockManagerInfo: Added rdd_1_2 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 4.3 GB)
+17/11/17 17:32:26 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 8, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:26 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 9, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:26 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 17137 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (1/16)
+17/11/17 17:32:26 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 17130 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (2/16)
+17/11/17 17:32:26 INFO BlockManagerInfo: Added rdd_1_4 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 4.0 GB)
+17/11/17 17:32:26 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 10, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:26 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 17441 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (3/16)
+17/11/17 17:32:26 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 11, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:26 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 17529 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (4/16)
+17/11/17 17:32:27 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 12, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:27 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 18075 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (5/16)
+17/11/17 17:32:27 INFO BlockManagerInfo: Added rdd_1_5 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 4.3 GB)
+17/11/17 17:32:27 INFO BlockManagerInfo: Added rdd_1_7 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 4.0 GB)
+17/11/17 17:32:27 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 13, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:27 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 18464 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (6/16)
+17/11/17 17:32:27 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 14, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:27 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 18671 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (7/16)
+17/11/17 17:32:27 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 15, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:27 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 18712 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (8/16)
+17/11/17 17:32:39 INFO BlockManagerInfo: Added rdd_1_11 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 3.7 GB)
+17/11/17 17:32:39 INFO BlockManagerInfo: Added rdd_1_9 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 3.7 GB)
+17/11/17 17:32:39 INFO BlockManagerInfo: Added rdd_1_8 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 3.4 GB)
+17/11/17 17:32:40 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 13755 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (9/16)
+17/11/17 17:32:40 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 14242 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (10/16)
+17/11/17 17:32:40 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 14232 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (11/16)
+17/11/17 17:32:40 INFO BlockManagerInfo: Added rdd_1_13 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 3.4 GB)
+17/11/17 17:32:40 INFO BlockManagerInfo: Added rdd_1_15 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 3.1 GB)
+17/11/17 17:32:41 INFO BlockManagerInfo: Added rdd_1_14 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 305.2 MB, free: 2.8 GB)
+17/11/17 17:32:41 INFO BlockManagerInfo: Added rdd_1_10 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 3.1 GB)
+17/11/17 17:32:41 INFO BlockManagerInfo: Added rdd_1_12 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 305.2 MB, free: 2.8 GB)
+17/11/17 17:32:41 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 14018 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (12/16)
+17/11/17 17:32:41 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 14061 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (13/16)
+17/11/17 17:32:41 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 14288 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (14/16)
+17/11/17 17:32:41 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 15558 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (15/16)
+17/11/17 17:32:41 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 14896 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 1) (16/16)
+17/11/17 17:32:41 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/11/17 17:32:41 INFO DAGScheduler: ResultStage 0 (count at MonteCarloRisk.scala:71) finished in 32.998 s
+17/11/17 17:32:41 INFO DAGScheduler: Job 0 finished: count at MonteCarloRisk.scala:71, took 33.123889 s
+TIMING: n=640000000, op=compute, duration=33.183768015
+17/11/17 17:32:41 INFO SparkContext: Starting job: takeOrdered at MonteCarloRisk.scala:77
+17/11/17 17:32:41 INFO DAGScheduler: Got job 1 (takeOrdered at MonteCarloRisk.scala:77) with 16 output partitions
+17/11/17 17:32:41 INFO DAGScheduler: Final stage: ResultStage 1 (takeOrdered at MonteCarloRisk.scala:77)
+17/11/17 17:32:41 INFO DAGScheduler: Parents of final stage: List()
+17/11/17 17:32:41 INFO DAGScheduler: Missing parents: List()
+17/11/17 17:32:41 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[2] at takeOrdered at MonteCarloRisk.scala:77), which has no missing parents
+17/11/17 17:32:41 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 3.6 KB, free 11.8 GB)
+17/11/17 17:32:41 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.1 KB, free 11.8 GB)
+17/11/17 17:32:41 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.31.22.160:40685 (size: 2.1 KB, free: 11.8 GB)
+17/11/17 17:32:41 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1047
+17/11/17 17:32:41 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 1 (MapPartitionsRDD[2] at takeOrdered at MonteCarloRisk.scala:77) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+17/11/17 17:32:41 INFO YarnScheduler: Adding task set 1.0 with 16 tasks
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 16, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 0, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 17, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 1, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 18, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 2, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 19, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 3, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 20, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 4, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 21, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 5, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 22, ip-172-31-19-196.us-east-2.compute.internal, executor 1, partition 6, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:41 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 23, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 7, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:32:42 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 2.1 KB, free: 2.8 GB)
+17/11/17 17:32:42 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:33411 (size: 2.1 KB, free: 2.8 GB)
+17/11/17 17:34:28 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.31.22.160:40685 in memory (size: 1803.0 B, free: 11.8 GB)
+17/11/17 17:34:51 INFO BlockManagerInfo: Removed broadcast_1_piece0 on ip-172-31-19-196.us-east-2.compute.internal:33411 in memory (size: 1803.0 B, free: 2.8 GB)
+17/11/17 17:35:00 INFO BlockManagerInfo: Removed broadcast_1_piece0 on ip-172-31-19-196.us-east-2.compute.internal:38207 in memory (size: 1803.0 B, free: 2.8 GB)
+17/11/17 17:35:42 INFO BlockManagerInfo: Added taskresult_19 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 276.0 MB, free: 2.5 GB)
+17/11/17 17:35:42 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 24, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 8, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:35:42 INFO TransportClientFactory: Successfully created connection to ip-172-31-19-196.us-east-2.compute.internal/172.31.19.196:38207 after 3 ms (0 ms spent in bootstraps)
+17/11/17 17:35:55 INFO BlockManagerInfo: Added taskresult_17 in memory on ip-172-31-19-196.us-east-2.compute.internal:38207 (size: 276.0 MB, free: 2.2 GB)
+17/11/17 17:35:55 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 25, ip-172-31-19-196.us-east-2.compute.internal, executor 2, partition 9, PROCESS_LOCAL, 4745 bytes)
+17/11/17 17:36:10 INFO YarnSchedulerBackend$YarnDriverEndpoint: Disabling executor 1.
+17/11/17 17:36:10 INFO DAGScheduler: Executor lost: 1 (epoch 0)
+17/11/17 17:36:10 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_12 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_4 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_13 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_6 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_10 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_11 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_0 !
+17/11/17 17:36:10 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_2 !
+17/11/17 17:36:10 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(1, ip-172-31-19-196.us-east-2.compute.internal, 33411, None)
+17/11/17 17:36:10 INFO BlockManagerMaster: Removed 1 successfully in removeExecutor
+17/11/17 17:36:10 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Container marked as failed: container_1510931896042_0031_01_000002 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:36:10 ERROR YarnScheduler: Lost executor 1 on ip-172-31-19-196.us-east-2.compute.internal: Container marked as failed: container_1510931896042_0031_01_000002 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:36:10 WARN TaskSetManager: Lost task 4.0 in stage 1.0 (TID 20, ip-172-31-19-196.us-east-2.compute.internal, executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000002 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:36:10 WARN TaskSetManager: Lost task 6.0 in stage 1.0 (TID 22, ip-172-31-19-196.us-east-2.compute.internal, executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000002 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:36:10 WARN TaskSetManager: Lost task 0.0 in stage 1.0 (TID 16, ip-172-31-19-196.us-east-2.compute.internal, executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000002 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:36:10 WARN TaskSetManager: Lost task 2.0 in stage 1.0 (TID 18, ip-172-31-19-196.us-east-2.compute.internal, executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000002 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:36:10 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+17/11/17 17:36:10 INFO BlockManagerMaster: Removal of executor 1 requested
+17/11/17 17:36:10 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asked to remove non-existent executor 1
+17/11/17 17:36:17 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.19.196:56984) with ID 3
+17/11/17 17:36:17 INFO TaskSetManager: Starting task 2.1 in stage 1.0 (TID 26, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 2, NODE_LOCAL, 4745 bytes)
+17/11/17 17:36:17 INFO TaskSetManager: Starting task 0.1 in stage 1.0 (TID 27, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 0, NODE_LOCAL, 4745 bytes)
+17/11/17 17:36:17 INFO TaskSetManager: Starting task 6.1 in stage 1.0 (TID 28, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 6, NODE_LOCAL, 4745 bytes)
+17/11/17 17:36:17 INFO TaskSetManager: Starting task 4.1 in stage 1.0 (TID 29, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 4, NODE_LOCAL, 4745 bytes)
+17/11/17 17:36:17 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-19-196.us-east-2.compute.internal:40455 with 5.2 GB RAM, BlockManagerId(3, ip-172-31-19-196.us-east-2.compute.internal, 40455, None)
+17/11/17 17:36:23 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 2.1 KB, free: 5.2 GB)
+17/11/17 17:36:24 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 215.0 B, free: 5.2 GB)
+17/11/17 17:36:28 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 19) in 226866 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (1/16)
+17/11/17 17:36:39 INFO BlockManagerInfo: Added rdd_1_2 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 4.9 GB)
+17/11/17 17:36:41 INFO BlockManagerInfo: Added rdd_1_4 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 4.6 GB)
+17/11/17 17:36:41 INFO BlockManagerInfo: Added rdd_1_6 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 4.3 GB)
+17/11/17 17:36:44 INFO BlockManagerInfo: Added rdd_1_0 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 4.0 GB)
+17/11/17 17:36:53 INFO BlockManagerInfo: Removed taskresult_19 on ip-172-31-19-196.us-east-2.compute.internal:38207 in memory (size: 276.0 MB, free: 2.5 GB)
+17/11/17 17:37:09 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 17) in 267844 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 2) (2/16)
+17/11/17 17:37:44 WARN TransportChannelHandler: Exception in connection from /172.31.19.196:56940
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:221)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:899)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:275)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:643)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:566)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:480)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:748)
+17/11/17 17:37:44 ERROR TransportResponseHandler: Still have 1 requests outstanding when connection from /172.31.19.196:56940 is closed
+17/11/17 17:37:44 INFO YarnSchedulerBackend$YarnDriverEndpoint: Disabling executor 2.
+17/11/17 17:37:44 INFO DAGScheduler: Executor lost: 2 (epoch 0)
+17/11/17 17:37:44 INFO BlockManagerMasterEndpoint: Trying to remove executor 2 from BlockManagerMaster.
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_3 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_5 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_14 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_15 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_7 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_8 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_9 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for taskresult_17 !
+17/11/17 17:37:44 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_1_1 !
+17/11/17 17:37:44 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(2, ip-172-31-19-196.us-east-2.compute.internal, 38207, None)
+17/11/17 17:37:44 INFO BlockManagerMaster: Removed 2 successfully in removeExecutor
+17/11/17 17:37:44 ERROR YarnScheduler: Lost executor 2 on ip-172-31-19-196.us-east-2.compute.internal: Container marked as failed: container_1510931896042_0031_01_000003 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:37:44 WARN TaskSetManager: Lost task 7.0 in stage 1.0 (TID 23, ip-172-31-19-196.us-east-2.compute.internal, executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000003 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:37:44 WARN TaskSetManager: Lost task 9.0 in stage 1.0 (TID 25, ip-172-31-19-196.us-east-2.compute.internal, executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000003 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:37:44 WARN TaskSetManager: Lost task 5.0 in stage 1.0 (TID 21, ip-172-31-19-196.us-east-2.compute.internal, executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000003 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:37:44 WARN TaskSetManager: Lost task 8.0 in stage 1.0 (TID 24, ip-172-31-19-196.us-east-2.compute.internal, executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Container marked as failed: container_1510931896042_0031_01_000003 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:37:44 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Container marked as failed: container_1510931896042_0031_01_000003 on host: ip-172-31-19-196.us-east-2.compute.internal. Exit status: 137. Diagnostics: Container killed on request. Exit code is 137
+Container exited with a non-zero exit code 137
+Killed by external signal
+
+17/11/17 17:37:44 INFO BlockManagerMaster: Removal of executor 2 requested
+17/11/17 17:37:44 INFO BlockManagerMasterEndpoint: Trying to remove executor 2 from BlockManagerMaster.
+17/11/17 17:37:44 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asked to remove non-existent executor 2
+17/11/17 17:37:50 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.19.196:56996) with ID 4
+17/11/17 17:37:50 INFO TaskSetManager: Starting task 8.1 in stage 1.0 (TID 30, ip-172-31-19-196.us-east-2.compute.internal, executor 4, partition 8, NODE_LOCAL, 4745 bytes)
+17/11/17 17:37:50 INFO TaskSetManager: Starting task 5.1 in stage 1.0 (TID 31, ip-172-31-19-196.us-east-2.compute.internal, executor 4, partition 5, NODE_LOCAL, 4745 bytes)
+17/11/17 17:37:50 INFO TaskSetManager: Starting task 9.1 in stage 1.0 (TID 32, ip-172-31-19-196.us-east-2.compute.internal, executor 4, partition 9, NODE_LOCAL, 4745 bytes)
+17/11/17 17:37:50 INFO TaskSetManager: Starting task 7.1 in stage 1.0 (TID 33, ip-172-31-19-196.us-east-2.compute.internal, executor 4, partition 7, NODE_LOCAL, 4745 bytes)
+17/11/17 17:37:50 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-19-196.us-east-2.compute.internal:35473 with 5.2 GB RAM, BlockManagerId(4, ip-172-31-19-196.us-east-2.compute.internal, 35473, None)
+17/11/17 17:38:11 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 2.1 KB, free: 5.2 GB)
+17/11/17 17:38:11 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 215.0 B, free: 5.2 GB)
+17/11/17 17:38:26 INFO BlockManagerInfo: Added rdd_1_9 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 305.2 MB, free: 4.9 GB)
+17/11/17 17:38:27 INFO BlockManagerInfo: Added rdd_1_5 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 305.2 MB, free: 4.6 GB)
+17/11/17 17:38:30 INFO BlockManagerInfo: Added rdd_1_8 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 305.2 MB, free: 4.3 GB)
+17/11/17 17:38:37 INFO BlockManagerInfo: Added rdd_1_7 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 305.2 MB, free: 4.0 GB)
+17/11/17 17:38:51 INFO BlockManagerInfo: Added taskresult_26 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 276.0 MB, free: 3.7 GB)
+17/11/17 17:38:51 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 34, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 10, NODE_LOCAL, 4745 bytes)
+17/11/17 17:38:51 INFO TransportClientFactory: Successfully created connection to ip-172-31-19-196.us-east-2.compute.internal/172.31.19.196:40455 after 1 ms (0 ms spent in bootstraps)
+17/11/17 17:38:51 INFO BlockManagerInfo: Added taskresult_29 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 276.0 MB, free: 3.4 GB)
+17/11/17 17:38:51 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 35, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 11, NODE_LOCAL, 4745 bytes)
+17/11/17 17:39:16 INFO BlockManagerInfo: Added taskresult_27 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 276.0 MB, free: 3.2 GB)
+17/11/17 17:39:20 INFO TaskSetManager: Finished task 2.1 in stage 1.0 (TID 26) in 183362 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 3) (3/16)
+17/11/17 17:39:36 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 36, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 12, NODE_LOCAL, 4745 bytes)
+17/11/17 17:39:36 INFO BlockManagerInfo: Added taskresult_28 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 276.0 MB, free: 2.9 GB)
+17/11/17 17:39:36 INFO BlockManagerInfo: Removed taskresult_26 on ip-172-31-19-196.us-east-2.compute.internal:40455 in memory (size: 276.0 MB, free: 3.2 GB)
+17/11/17 17:39:36 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 37, ip-172-31-19-196.us-east-2.compute.internal, executor 3, partition 13, NODE_LOCAL, 4745 bytes)
+17/11/17 17:39:50 INFO BlockManagerInfo: Added rdd_1_10 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 2.9 GB)
+17/11/17 17:39:50 INFO BlockManagerInfo: Added rdd_1_11 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 2.6 GB)
+17/11/17 17:39:50 INFO TaskSetManager: Finished task 4.1 in stage 1.0 (TID 29) in 213076 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 3) (4/16)
+17/11/17 17:39:50 INFO BlockManagerInfo: Removed taskresult_29 on ip-172-31-19-196.us-east-2.compute.internal:40455 in memory (size: 276.0 MB, free: 2.8 GB)
+17/11/17 17:39:53 INFO TaskSetManager: Finished task 0.1 in stage 1.0 (TID 27) in 216027 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 3) (5/16)
+17/11/17 17:39:53 INFO TaskSetManager: Finished task 6.1 in stage 1.0 (TID 28) in 216408 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 3) (6/16)
+17/11/17 17:39:55 INFO BlockManagerInfo: Removed taskresult_27 on ip-172-31-19-196.us-east-2.compute.internal:40455 in memory (size: 276.0 MB, free: 3.1 GB)
+17/11/17 17:39:55 INFO BlockManagerInfo: Removed taskresult_28 on ip-172-31-19-196.us-east-2.compute.internal:40455 in memory (size: 276.0 MB, free: 3.4 GB)
+17/11/17 17:39:55 INFO BlockManagerInfo: Added rdd_1_12 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 3.1 GB)
+17/11/17 17:39:56 INFO BlockManagerInfo: Added rdd_1_13 in memory on ip-172-31-19-196.us-east-2.compute.internal:40455 (size: 305.2 MB, free: 2.8 GB)
+17/11/17 17:40:00 INFO BlockManagerInfo: Added taskresult_32 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 276.0 MB, free: 3.7 GB)
+17/11/17 17:40:00 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 38, ip-172-31-19-196.us-east-2.compute.internal, executor 4, partition 14, NODE_LOCAL, 4745 bytes)
+17/11/17 17:40:00 INFO TransportClientFactory: Successfully created connection to ip-172-31-19-196.us-east-2.compute.internal/172.31.19.196:35473 after 1 ms (0 ms spent in bootstraps)
+17/11/17 17:40:27 INFO BlockManagerInfo: Added taskresult_31 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 276.0 MB, free: 3.4 GB)
+17/11/17 17:40:27 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 39, ip-172-31-19-196.us-east-2.compute.internal, executor 4, partition 15, NODE_LOCAL, 4745 bytes)
+17/11/17 17:40:33 INFO TaskSetManager: Finished task 9.1 in stage 1.0 (TID 32) in 162394 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 4) (7/16)
+17/11/17 17:40:52 INFO BlockManagerInfo: Removed taskresult_32 on ip-172-31-19-196.us-east-2.compute.internal:35473 in memory (size: 276.0 MB, free: 3.7 GB)
+17/11/17 17:40:53 INFO BlockManagerInfo: Added taskresult_33 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 276.0 MB, free: 3.4 GB)
+17/11/17 17:40:54 INFO BlockManagerInfo: Added taskresult_30 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 276.0 MB, free: 3.2 GB)
+17/11/17 17:40:57 INFO TaskSetManager: Finished task 5.1 in stage 1.0 (TID 31) in 186301 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 4) (8/16)
+17/11/17 17:41:10 INFO BlockManagerInfo: Removed taskresult_31 on ip-172-31-19-196.us-east-2.compute.internal:35473 in memory (size: 276.0 MB, free: 3.4 GB)
+17/11/17 17:41:17 INFO TaskSetManager: Finished task 7.1 in stage 1.0 (TID 33) in 206538 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 4) (9/16)
+17/11/17 17:41:17 INFO BlockManagerInfo: Removed taskresult_33 on ip-172-31-19-196.us-east-2.compute.internal:35473 in memory (size: 276.0 MB, free: 3.7 GB)
+17/11/17 17:41:18 INFO TaskSetManager: Finished task 8.1 in stage 1.0 (TID 30) in 207988 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 4) (10/16)
+17/11/17 17:41:18 INFO BlockManagerInfo: Removed taskresult_30 on ip-172-31-19-196.us-east-2.compute.internal:35473 in memory (size: 276.0 MB, free: 4.0 GB)
+17/11/17 17:41:20 INFO BlockManagerInfo: Added rdd_1_15 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 305.2 MB, free: 3.7 GB)
+17/11/17 17:41:26 INFO BlockManagerInfo: Added rdd_1_14 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 305.2 MB, free: 3.4 GB)
+17/11/17 17:41:59 INFO BlockManagerInfo: Added taskresult_38 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 276.0 MB, free: 3.1 GB)
+17/11/17 17:42:03 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 38) in 123201 ms on ip-172-31-19-196.us-east-2.compute.internal (executor 4) (11/16)
+17/11/17 17:42:05 INFO BlockManagerInfo: Removed taskresult_38 on ip-172-31-19-196.us-east-2.compute.internal:35473 in memory (size: 276.0 MB, free: 3.4 GB)
+17/11/17 17:42:06 INFO BlockManagerInfo: Added taskresult_39 in memory on ip-172-31-19-196.us-east-2.compute.internal:35473 (size: 276.0 MB, free: 3.1 GB)
