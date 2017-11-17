@@ -71,6 +71,7 @@ object MonteCarloRisk {
     println("VaR: " + varFivePercent)
 
     // Kernel density estimation
+    /*
     val domain = Range.Double(20.0, 60.0, .2).toArray
     val densities = KernelDensity.estimate(trialsRdd, 0.25, domain)
     val pw = new PrintWriter("densities.csv")
@@ -78,6 +79,7 @@ object MonteCarloRisk {
       pw.println(point._1 + "," + point._2)
     }
     pw.close()
+    */
   }
 
   def trialValues(seed: Long, numTrials: Int, instruments: Seq[Instrument],
