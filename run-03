@@ -1,0 +1,38 @@
+#!/bin/bash
+set -eu
+
+NODES=5
+CORES_PER_NODE=8 # 16 VCPUs, but only 8 physical
+CORES_PER_EXECUTOR=4
+EXECUTORS_PER_NODE=$(( ${CORES_PER_NODE} / ${CORES_PER_EXECUTOR} ))
+NUM_EXECUTORS=$(( ${NODES} * ${EXECUTORS_PER_NODE} ))
+PARTITIONS=$(( ${NODES} * ${CORES_PER_NODE} * 2 ))
+
+echo "Nodes: ${NODES}"
+echo "Cores/node: ${CORES_PER_NODE}"
+echo "Executors/node: ${EXECUTORS_PER_NODE}"
+echo "Cores/executor: ${CORES_PER_EXECUTOR}"
+echo "Executors: ${NUM_EXECUTORS}"
+mkdir -p logs
+sleep 5
+
+for MULTIPLIER in `seq 5 10 130`; do
+        N=$(( ${NODES} * ${CORES_PER_NODE} * ${MULTIPLIER} * 1000000 * 2))
+        OUTPUT="logs/$(basename $0)-${N}.log"
+	rm -f ${OUTPUT}
+        echo "Number of trials: ${N}" | tee -a ${OUTPUT}
+	echo "Data Size (MB): $(( ${N} * 8 / 1048576 ))" | tee -a ${OUTPUT}
+        /usr/bin/time -f "TIMING: n=${N}, op=totalExecution, duration=%e" spark-submit --master yarn --deploy-mode client \
+          --class com.cloudera.datascience.montecarlorisk.MonteCarloRisk \
+          --conf "spark.dynamicAllocation.enabled=false" \
+          --conf "spark.kryoserializer.buffer.max=512m" \
+          --conf "spark.driver.maxResultSize=12576m" \
+          --conf "spark.network.timeout=300s" \
+          --driver-memory=40g \
+          --executor-memory=9g \
+          --num-executors=${NUM_EXECUTORS} \
+          --executor-cores=${CORES_PER_EXECUTOR} \
+          target/montecarlo-risk-0.0.1-SNAPSHOT.jar \
+          data/instruments.csv ${N} ${PARTITIONS} data/means.csv data/covariances.csv \
+          2>&1 | tee -a ${OUTPUT}
+done
